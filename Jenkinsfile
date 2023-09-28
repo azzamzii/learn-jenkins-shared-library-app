@@ -19,7 +19,6 @@ pipeline {
                 echo ("Author ${AUTHOR}")
                 echo ("App User : ${APP_USR}")
                 sh ("Echo 'App Password : ${APP_PSW}' > 'secret.txt'")
-                echo ("App Pasword : ${APP_PSW}")
                 echo ("Start Job    : ${env.JOB_NAME}")
                 echo ("Start Build  : ${env.BUILD_NUMBER}")
                 echo ("Branch Name  : ${env.BRANCH_NAME}")
