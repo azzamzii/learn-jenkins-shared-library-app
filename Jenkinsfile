@@ -5,6 +5,11 @@ pipeline {
         AUTHOR = "Azzam Zhafran Imran"
     }
 
+    options {
+        disableConcurrentBuilds()
+        timeout(time:10, unit: 'MINUTES')
+    }
+
     stages {
         stage("Prepare") {
             environment {
