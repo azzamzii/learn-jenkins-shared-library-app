@@ -3,11 +3,13 @@ pipeline {
 
     environment {
         AUTHOR = "Azzam Zhafran Imran"
-        EMAIL = "azzam-test@fake-gmail.com"
     }
 
     stages {
         stage("Prepare") {
+            environment {
+                APP = credentials ("azzam-secret")
+            }
             agent {
                 node {
                     label "linux && java11"
@@ -15,7 +17,8 @@ pipeline {
             }
             steps{
                 echo ("Author ${AUTHOR}")
-                echo ("Email ${EMAIL}")
+                echo ("App User : ${APP_USR}")
+                echo ("App Pasword : ${APP_PSW}")
                 echo ("Start Job    : ${env.JOB_NAME}")
                 echo ("Start Build  : ${env.BUILD_NUMBER}")
                 echo ("Branch Name  : ${env.BRANCH_NAME}")
