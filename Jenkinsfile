@@ -1,11 +1,12 @@
 pipeline {
-    agent {
-        node {
-            label "linux && java11"
-        }
-    }
+    agent none
     stages {
         stage("Build") {
+            agent {
+                node {
+                    label "linux && java11"
+                }
+            }
             steps{
                 script {
                     def data = [
@@ -20,6 +21,11 @@ pipeline {
             }
         }
         stage("Test") {
+            agent {
+                node {
+                    label "linux && java11"
+                }
+            }
             steps{
                 echo("Start Test")
                 sh("./mvnw test")
