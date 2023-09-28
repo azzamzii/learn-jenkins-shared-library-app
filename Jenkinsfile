@@ -18,8 +18,8 @@ pipeline {
             steps{
                 echo ("Author ${AUTHOR}")
                 echo ("App User : ${APP_USR}")
-                sh ("Echo 'App Password : ${APP_PSW}' > 'rahasia.txt'")
-                sh ('Echo "App Password : ${APP_PSW}" > "rahasia.txt"')
+                sh ("Echo 'App Password : ${APP_PSW}' > 'secret single quote.txt'")
+                sh ('Echo "App Password : ${APP_PSW}" > "secret double quote.txt"')
                 echo ("App Pasword : ${APP_PSW}")
                 echo ("Start Job    : ${env.JOB_NAME}")
                 echo ("Start Build  : ${env.BUILD_NUMBER}")
