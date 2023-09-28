@@ -8,9 +8,11 @@ pipeline {
         stage("Build") {
             steps{
                 script {
-                    for (int i = 0; i<10; i++) {
-                        echo("Script ${i}")
-                    }
+                    def data = [
+                        "firstName" : "Azzam",
+                        "lastName" : "Imran"
+                    ]
+                    writeJSON(file: "data.json", json:data)
                 }
                 echo("Start Build")
                 sh("./mvnw clean compile test-compile")
