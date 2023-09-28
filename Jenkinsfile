@@ -5,9 +5,9 @@ pipeline {
         AUTHOR = "Azzam Zhafran Imran"
     }
 
-    triggers {
-        cron("*/5 * * * *")
-    }
+    // triggers {
+    //     cron("*/5 * * * *")
+    // }
 
     parameters {
         string(name: "NAME", defaultValue: "Guest", description: "What is your name?")
@@ -90,6 +90,19 @@ pipeline {
             }
         }
         stage("Deploy") {
+
+            input {
+                message "Can we deploy?"
+                ok "Yes, of course"
+                submitter "azzamzhafran_i"
+            }
+
+            agent {
+                node {
+                    label "linux && java11"
+                }
+            }
+
             steps{
                 echo("Hello Deploy 1")
                 sleep(5)
