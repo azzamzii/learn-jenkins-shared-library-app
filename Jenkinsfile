@@ -43,7 +43,7 @@ pipeline {
                             values "mac"
                         }
                         axis {
-                            name "ABC"
+                            name "ARC"
                             values "32"
                         }
                     }
