@@ -44,7 +44,7 @@ pipeline {
                         }
                         axis {
                             name "ARC"
-                            values "32"
+                            values "x32"
                         }
                     }
                 }
