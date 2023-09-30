@@ -8,6 +8,7 @@ pipeline {
         stage("Global variabel") {
             steps {
                 script {
+                    echo(author())
                     echo(author.name())
                     echo(author.channel())
                 }
