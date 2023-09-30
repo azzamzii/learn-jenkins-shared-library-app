@@ -5,7 +5,7 @@ import programmerzamannow.jenkins.Output;
 pipeline {
     agent any
     stages {
-        stage("Hello Groovy") {
+        stage("Global variabel") {
             steps {
                 script {
                     echo(author.name())
