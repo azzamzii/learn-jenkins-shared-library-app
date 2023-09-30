@@ -1,3 +1,5 @@
 @Library("learn-jenkins-shared-library@main") _
 
-mavenPipeline()
+aziPipeline([
+    type: "maven"
+])
