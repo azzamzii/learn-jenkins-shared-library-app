@@ -8,6 +8,14 @@ pipeline {
         stage("Hello Groovy") {
             steps {
                 script {
+                    echo(author.name())
+                    echo(author.channel())
+                }
+            }
+        }
+        stage("Hello Groovy") {
+            steps {
+                script {
                     Output.hello(this, "Groovy")
                 }
             }
